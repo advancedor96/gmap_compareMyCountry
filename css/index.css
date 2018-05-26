@@ -1,0 +1,29 @@
+
+ *{
+	position: relative;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.searchBox{
+	position: absolute;
+	z-index: 1;
+	margin: 8px 0 8px 8px;
+
+}
+#map {
+	height: 100%;
+	/* top:130px; */
+ }
+ #my_country {
+	width: 200px;
+	height: 200px;
+	right: 0;
+	position: absolute;
+	bottom: 50vh;
+	background-color: grey;
+ }
+ /* Optional: Makes the sample page fill the window. */
