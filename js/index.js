@@ -29,7 +29,7 @@ function initMap() {
 		let short_name = country_list[i].id;
 		select_data.push({
 			id: i,
-			text: short_name,
+			text: name,
 			// text: name + ', ' + short_name,
 		})
 	}
@@ -43,14 +43,14 @@ function initMap() {
 	
 	 $('.js-example-basic-single').on('change', function(){
 		let selected_name = $('.js-example-basic-single option:selected' ).text();
-		console.log(selected_name);
+		// console.log(selected_name);
 
 		my_map.data.forEach(feature => {
 			my_map.data.remove(feature);
 		});
 	
 		let result_c = country_list.find(((item, idx)=>{
-			return item["id"] === selected_name
+			return item["properties"]['name'] === selected_name
 		}));
 	
 		if(result_c === undefined){
