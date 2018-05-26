@@ -39,20 +39,27 @@ function initMap() {
 		allowClear: true,
 		width: '200',
 	 });
+	 $('.js-example-basic-single').val(null).trigger('change');
 	
 	 $('.js-example-basic-single').on('change', function(){
 		let selected_name = $('.js-example-basic-single option:selected' ).text();
 		console.log(selected_name);
+
+		my_map.data.forEach(feature => {
+			my_map.data.remove(feature);
+		});
 	
 		let result_c = country_list.find(((item, idx)=>{
 			return item["id"] === selected_name
 		}));
 	
 		if(result_c === undefined){
-			alert('找不到');
+			//alert('找不到');
 		}else{
 			try{
-				my_map.data.addGeoJson(result_c);
+				let features = my_map.data.addGeoJson(result_c);
+
+
 				my_map.data.setStyle({
 					draggable: true,
 					strokeWeight: 1,
