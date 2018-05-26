@@ -11,6 +11,8 @@ function initMap() {
 		center: { lat: 23.821077, lng: 121.002655 },
 		zoom: 2,
 		mapTypeControl: false,
+		fullscreenControl: false,
+		streetViewControl: false,
 	});
 	
 	my_map.addListener('zoom_changed', function(arg){
@@ -35,9 +37,9 @@ function initMap() {
 	}
 	$('.js-example-basic-single').select2({
 		data: select_data,
-		placeholder: 'Select an country',
+		placeholder: '選擇國家',
 		allowClear: true,
-		width: '200',
+		width: '100%',
 	 });
 	 $('.js-example-basic-single').val(null).trigger('change');
 	
